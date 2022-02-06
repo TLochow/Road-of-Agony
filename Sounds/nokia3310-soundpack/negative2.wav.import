@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/negative2.wav-e2cc90887331dfe94fd14d49c9a636fa.sample"
+
+[deps]
+
+source_file="res://Sounds/nokia3310-soundpack/negative2.wav"
+dest_files=[ "res://.import/negative2.wav-e2cc90887331dfe94fd14d49c9a636fa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

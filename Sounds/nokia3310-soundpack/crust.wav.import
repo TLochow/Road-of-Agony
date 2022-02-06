@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/crust.wav-2abc0dac58e7cf857b329c8ea3f8c69d.sample"
+
+[deps]
+
+source_file="res://Sounds/nokia3310-soundpack/crust.wav"
+dest_files=[ "res://.import/crust.wav-2abc0dac58e7cf857b329c8ea3f8c69d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

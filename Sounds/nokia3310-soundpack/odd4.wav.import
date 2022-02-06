@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/odd4.wav-3da5104a8f8a2ea22b6a9fd12408797a.sample"
+
+[deps]
+
+source_file="res://Sounds/nokia3310-soundpack/odd4.wav"
+dest_files=[ "res://.import/odd4.wav-3da5104a8f8a2ea22b6a9fd12408797a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

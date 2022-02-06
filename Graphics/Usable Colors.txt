@@ -1,0 +1,2 @@
+Bright: c7f0d8
+Dark: 43523d
