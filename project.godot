@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="The Way Home"
+config/name="Road of Agony"
 run/main_scene="res://Scenes/LevelSelector.tscn"
 config/icon="res://icon.png"
 

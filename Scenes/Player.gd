@@ -186,7 +186,7 @@ func _on_DashTween_tween_all_completed():
 	DashParticles.emitting = false
 
 func _on_PogoArea_body_entered(_body):
-	Motion.y = -100.0
+	Motion.y = -75.0
 	RefreshJumps()
 	SoundHandler.PlaySound("blip14")
 
