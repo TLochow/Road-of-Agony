@@ -21,4 +21,10 @@ func _on_Powerup_body_entered(body):
 		match(Type):
 			1:
 				body.DashEnabled = true
+			2:
+				body.DoubleJumpEnabled = true
+			3:
+				body.WallJumpEnabled = true
+			4:
+				body.PogoEnabled = true
 		emit_signal("Collected")

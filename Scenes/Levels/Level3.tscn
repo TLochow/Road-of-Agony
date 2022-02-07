@@ -29,7 +29,7 @@ margin_right = 81.0
 margin_bottom = 34.0
 custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Hold Jump
+text = "Hold Up
 to jump
 higher!"
 align = 1

@@ -38,5 +38,6 @@ process_material = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+hframes = 4
 
 [connection signal="body_entered" from="." to="." method="_on_Powerup_body_entered"]

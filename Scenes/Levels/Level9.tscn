@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/PlayerCamera.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Powerup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Graphics/Ark.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Scenes/Levels/Level9.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Levels/PowerUpScript.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -36,13 +36,13 @@ __meta__ = {
 [node name="Goal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 177, 35 )
 
-[node name="Level9" type="Node2D" parent="."]
+[node name="PowerUpNode" type="Node2D" parent="."]
 script = ExtResource( 9 )
 
-[node name="Powerup" parent="Level9" instance=ExtResource( 7 )]
+[node name="Powerup" parent="PowerUpNode" instance=ExtResource( 7 )]
 position = Vector2( 32, 21 )
 
-[node name="Label" type="Label" parent="Level9"]
+[node name="Label" type="Label" parent="PowerUpNode"]
 visible = false
 margin_left = 42.0
 margin_top = 8.0
