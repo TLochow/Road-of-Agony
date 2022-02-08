@@ -1,7 +1,6 @@
 extends Control
 
 onready var LeveLabel = $LevelLabel
-onready var CompletedSprite = $CompletedSprite
 onready var UITween = $ColorRect/Tween
 onready var UIColorRect = $ColorRect
 
@@ -44,5 +43,7 @@ func _on_Tween_tween_all_completed():
 		LevelHandler.LoadLevel(false)
 
 func SetLabelText():
-	LeveLabel.text = "Level:" + str(SelectedLevel)
-	CompletedSprite.visible = SaveHandler.LoadLevelCompleted(SelectedLevel)
+	var levelText = "LEVEL:" + str(SelectedLevel)
+	if SaveHandler.LoadLevelCompleted(SelectedLevel):
+		levelText += " (Done)"
+	LeveLabel.text = levelText

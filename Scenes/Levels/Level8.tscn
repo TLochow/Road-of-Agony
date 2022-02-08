@@ -36,17 +36,11 @@ position = Vector2( 180, -33 )
 position = Vector2( 37, 29 )
 GoingRight = true
 
-[node name="WalkingEnemy2" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 88, 21 )
-
 [node name="WalkingEnemy3" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 112, 17 )
 
 [node name="WalkingEnemy4" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 121, -7 )
-
-[node name="WalkingEnemy5" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 90, -7 )
 
 [node name="WalkingEnemy6" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 30, -11 )

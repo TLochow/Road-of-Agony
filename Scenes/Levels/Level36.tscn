@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/PlayerCamera.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Hazards/Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Hazards/Sawblade.tscn" type="PackedScene" id=7]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( -983016, 0, 0, -983015, 0, 0, -983014, 0, 0, -983013, 0, 0, -983012, 0, 0, -983011, 0, 0, -983010, 0, 0, -983009, 0, 0, -983008, 0, 0, -983007, 0, 0, -983006, 0, 0, -983005, 0, 0, -983004, 0, 0, -917480, 0, 0, -917468, 0, 0, -851944, 0, 0, -851932, 0, 0, -786408, 0, 0, -786396, 0, 0, -720872, 0, 0, -720860, 0, 0, -655336, 0, 0, -655335, 0, 0, -655334, 0, 0, -655333, 0, 0, -655332, 0, 0, -655324, 0, 0, -589796, 0, 0, -589788, 0, 0, -524260, 0, 0, -524252, 0, 0, -458724, 0, 0, -458716, 0, 0, -393188, 0, 0, -393180, 0, 0, -327652, 0, 0, -327644, 0, 0, -262116, 0, 0, -262108, 0, 0, -196580, 0, 0, -196572, 0, 0, -131044, 0, 0, -131036, 0, 0, -65508, 0, 0, -65500, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 36, 0, 0, 65536, 0, 0, 65572, 0, 0, 131072, 0, 0, 131108, 0, 0, 196608, 0, 0, 196644, 0, 0, 262144, 0, 0, 262180, 0, 0, 327680, 0, 0, 327716, 0, 0, 393216, 0, 0, 393252, 0, 0, 458752, 0, 0, 458788, 0, 0, 524288, 0, 0, 524324, 0, 0, 589824, 0, 0, 589860, 0, 0, 655360, 0, 0, 655396, 0, 0, 720896, 0, 0, 720932, 0, 0, 786432, 0, 0, 786468, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 852004, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917540, 0, 0, 983040, 0, 0, 983041, 0, 0, 983076, 0, 0, 1048576, 0, 0, 1048612, 0, 0, 1114112, 0, 0, 1114148, 0, 0, 1179648, 0, 0, 1179684, 0, 0, 1245184, 0, 0, 1245220, 0, 0, 1310720, 0, 0, 1310756, 0, 0, 1376256, 0, 0, 1376292, 0, 0, 1441792, 0, 0, 1441828, 0, 0, 1507328, 0, 0, 1507364, 0, 0, 1572864, 0, 0, 1572900, 0, 0, 1638400, 0, 0, 1638401, 0, 0, 1638402, 0, 0, 1638403, 0, 0, 1638404, 0, 0, 1638405, 0, 0, 1638406, 0, 0, 1638407, 0, 0, 1638408, 0, 0, 1638409, 0, 0, 1638410, 0, 0, 1638411, 0, 0, 1638412, 0, 0, 1638413, 0, 0, 1638414, 0, 0, 1638415, 0, 0, 1638416, 0, 0, 1638417, 0, 0, 1638418, 0, 0, 1638419, 0, 0, 1638420, 0, 0, 1638421, 0, 0, 1638422, 0, 0, 1638423, 0, 0, 1638424, 0, 0, 1638425, 0, 0, 1638426, 0, 0, 1638427, 0, 0, 1638428, 0, 0, 1638429, 0, 0, 1638430, 0, 0, 1638431, 0, 0, 1638432, 0, 0, 1638433, 0, 0, 1638434, 0, 0, 1638435, 0, 0, 1638436, 0, 0 )
+
+[node name="Spikes" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -917469, 3, 0, -851933, 3, 0, -786397, 3, 0, -720861, 3, 0, -655331, 2, 0, -655325, 3, 0, -589795, 2, 0, -589789, 3, 0, -524259, 2, 0, -524253, 3, 0, -458723, 2, 0, -458717, 3, 0, -393187, 2, 0, -393181, 3, 0, -327651, 2, 0, -327645, 3, 0, -262115, 2, 0, -262109, 3, 0, -196579, 2, 0, -196573, 3, 0, -131043, 2, 0, -131037, 3, 0, -65507, 2, 0, -65501, 3, 0, 29, 2, 0, 35, 3, 0, 65537, 9, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 65559, 1, 0, 65560, 1, 0, 65561, 1, 0, 65562, 1, 0, 65563, 1, 0, 65564, 1, 0, 65565, 5, 0, 65571, 3, 0, 131073, 2, 0, 131107, 3, 0, 196609, 2, 0, 196643, 3, 0, 262145, 2, 0, 262179, 3, 0, 327681, 2, 0, 327715, 3, 0, 393217, 2, 0, 393251, 3, 0, 458753, 2, 0, 458787, 3, 0, 524289, 2, 0, 524323, 3, 0, 589825, 2, 0, 589859, 3, 0, 655361, 2, 0, 655395, 3, 0, 720897, 2, 0, 720931, 3, 0, 786433, 2, 0, 786467, 3, 0, 852003, 3, 0, 917539, 3, 0, 983075, 3, 0, 1048577, 2, 0, 1048611, 3, 0, 1114113, 2, 0, 1114147, 3, 0, 1179649, 2, 0, 1179683, 3, 0, 1245185, 2, 0, 1245219, 3, 0, 1310721, 2, 0, 1310755, 3, 0, 1376257, 2, 0, 1376291, 3, 0, 1441793, 2, 0, 1441827, 3, 0, 1507329, 2, 0, 1507363, 3, 0, 1572865, 8, 0, 1572866, 0, 0, 1572867, 0, 0, 1572868, 0, 0, 1572869, 0, 0, 1572870, 0, 0, 1572871, 0, 0, 1572872, 0, 0, 1572873, 0, 0, 1572874, 0, 0, 1572875, 0, 0, 1572876, 0, 0, 1572877, 0, 0, 1572878, 0, 0, 1572879, 0, 0, 1572880, 0, 0, 1572881, 0, 0, 1572882, 0, 0, 1572883, 0, 0, 1572884, 0, 0, 1572885, 0, 0, 1572886, 0, 0, 1572887, 0, 0, 1572888, 0, 0, 1572889, 0, 0, 1572890, 0, 0, 1572891, 0, 0, 1572892, 0, 0, 1572893, 0, 0, 1572894, 0, 0, 1572895, 0, 0, 1572896, 0, 0, 1572897, 0, 0, 1572898, 0, 0, 1572899, 11, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 13, 50 )
+DashEnabled = true
+DoubleJumpEnabled = true
+WallJumpEnabled = true
+PogoEnabled = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Goal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 107, -45 )
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="Sawblade" parent="Hazards" instance=ExtResource( 7 )]
+position = Vector2( 62, 50 )
+Scale = 2.0
+MoveSpeed = 0.4
+
+[node name="Start" type="Position2D" parent="Hazards/Sawblade"]
+position = Vector2( -40, 0 )
+
+[node name="End" type="Position2D" parent="Hazards/Sawblade"]
+position = Vector2( 7, 0 )
+
+[node name="Sawblade2" parent="Hazards" instance=ExtResource( 7 )]
+position = Vector2( 119, 50 )
+Scale = 2.0
+MoveSpeed = 0.4
+MoveOffset = 1.0
+
+[node name="Start" type="Position2D" parent="Hazards/Sawblade2"]
+position = Vector2( -40, 0 )
+
+[node name="End" type="Position2D" parent="Hazards/Sawblade2"]
+position = Vector2( 7, 0 )
+
+[node name="Sawblade3" parent="Hazards" instance=ExtResource( 7 )]
+position = Vector2( 136, 39 )
+Scale = 2.0
+MoveSpeed = 0.4
+MoveOffset = 1.0
+
+[node name="Start" type="Position2D" parent="Hazards/Sawblade3"]
+position = Vector2( 0, -36 )
+
+[node name="End" type="Position2D" parent="Hazards/Sawblade3"]
+position = Vector2( 0, 11 )
+
+[node name="Sawblade4" parent="Hazards" instance=ExtResource( 7 )]
+position = Vector2( 126, -8 )
+Scale = 2.0
+MoveSpeed = 0.4
+
+[node name="Start" type="Position2D" parent="Hazards/Sawblade4"]
+position = Vector2( 0, -36 )
+
+[node name="End" type="Position2D" parent="Hazards/Sawblade4"]
+position = Vector2( 0, 11 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Tween" type="Tween" parent="UI"]
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+visible = false
+margin_right = 84.0
+margin_bottom = 48.0
+color = Color( 0.262745, 0.321569, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

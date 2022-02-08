@@ -1,0 +1,204 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Graphics/Ark.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Hazards/Sawblade.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/StartScreen.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Hazards/Spikes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Graphics/Player.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/EffortsPro.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 55, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 22, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Wave"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 2 ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 52, -0.25, 0, 0.25, 0, 52, -0.25, 0, 0.25, 0, 52, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 28, -0.25, 0, 0.25, 0, 36, -0.25, 0, 0.25, 0, 28, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+
+[node name="StartScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 115, -5 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -5.0
+margin_top = -3.0
+margin_right = 79.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ROAD"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = -29.0
+margin_top = 14.0
+margin_right = 55.0
+margin_bottom = 36.0
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "OF"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 13.0
+margin_top = 10.0
+margin_right = 97.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "AGONY"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 26.0
+margin_right = 43.0
+margin_bottom = 39.0
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Press any"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 34.0
+margin_right = 55.0
+margin_bottom = 47.0
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Key to start."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sawblade" parent="." instance=ExtResource( 2 )]
+position = Vector2( 6, 12 )
+Scale = 2.0
+
+[node name="Sawblade2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 72, 6 )
+Scale = 3.0
+
+[node name="Sawblade3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 86, 44 )
+Scale = 5.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 55, 22 )
+texture = ExtResource( 6 )
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/RESET = SubResource( 2 )
+anims/Wave = SubResource( 3 )
+
+[node name="Spikes" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 458766, 7, 0, 458767, 0, 0, 458768, 0, 0, 458769, 4, 0, 524302, 3, 0, 524305, 2, 0, 589838, 3, 0, 589841, 2, 0, 655374, 3, 0, 655377, 2, 0, 720910, 6, 0, 720911, 1, 0, 720912, 1, 0, 720913, 5, 0 )
+
+[node name="TileMap" parent="." instance=ExtResource( 5 )]
+tile_data = PoolIntArray( 524303, 0, 0, 524304, 0, 0, 589839, 0, 0, 589840, 0, 0, 655375, 0, 0, 655376, 0, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -48.0
+margin_bottom = -48.0
+color = Color( 0.262745, 0.321569, 0.239216, 1 )
+
+[node name="Tween" type="Tween" parent="ColorRect"]
+
+[connection signal="tween_all_completed" from="ColorRect/Tween" to="." method="_on_Tween_tween_all_completed"]
