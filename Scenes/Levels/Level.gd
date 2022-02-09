@@ -24,7 +24,9 @@ func _unhandled_input(event):
 		var _result = get_tree().change_scene("res://Scenes/LevelSelector.tscn")
 
 func PlayerDied():
-	LoadLevel(false)
+	if not LevelFinished:
+		LevelFinished = true
+		LoadLevel(false)
 
 func GoalReached():
 	if not LevelFinished:
