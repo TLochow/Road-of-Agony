@@ -20,6 +20,7 @@ onready var WallJumpCastLeftTop = $WallJumpCastsLeft/Top
 onready var WallJumpCastLeftBottom = $WallJumpCastsLeft/Bottom
 onready var WallJumpCastRightTop = $WallJumpCastsRight/Top
 onready var WallJumpCastRightBottom = $WallJumpCastsRight/Bottom
+onready var GroundCheck = $GroundCheck
 
 onready var PogoArea = $PogoArea
 onready var PogoTimer = $PogoArea/PogoTimer
@@ -91,18 +92,18 @@ func _physics_process(delta):
 					HasDoubleJump = false
 					UsedDoubleJump = false
 					CoyoteTime = 0.0
-					JumpBoost = 5.0
+					JumpBoost = 300.0
 					Motion.y = -50.0
-					if isOnWall and not isOnFloor:
+					if isOnWall and not GroundCheck.is_colliding():
 						WallJumpTween.interpolate_property(self, "WallJumpBonus", 50.0, 0.0, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 						WallJumpTween.start()
 					SoundHandler.PlaySound("blip2")
 				elif JumpBoost > 0.0:
-					Motion.y -= JumpBoost
-					JumpBoost = max(JumpBoost - (delta * 10.0), 0.0)
-				elif DoubleJumpEnabled and HasDoubleJump and not UsedDoubleJump:
+					Motion.y -= JumpBoost * delta
+					JumpBoost = max(JumpBoost - (delta * 600.0), 0.0)
+				elif (DoubleJumpEnabled and HasDoubleJump and not UsedDoubleJump) or AssistMode.UnlimitedDoubleJumps:
 					UsedDoubleJump = true
-					JumpBoost = 5.0
+					JumpBoost = 300.0
 					Motion.y = -50.0
 					SoundHandler.PlaySound("blip5")
 					DoubleJumpParticles.emitting = true
@@ -179,7 +180,8 @@ func RefreshJumps():
 	UsedDoubleJump = false
 
 func _on_DamageDetector_body_entered(_body):
-	Die()
+	if not AssistMode.Invincible:
+		Die()
 
 func _on_DashTween_tween_all_completed():
 	CanDash = true

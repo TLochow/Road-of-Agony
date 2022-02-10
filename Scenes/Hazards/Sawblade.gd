@@ -26,5 +26,5 @@ func _ready():
 func _process(delta):
 	SpriteNode.rotate(delta * 20.0)
 	if Moving:
-		var pos = MoveStartPos + (MoveVector * (((sin((OS.get_ticks_msec() * 0.001 * MoveSpeed) + MoveOffset) + 1.0) * 0.5)))
+		var pos = MoveStartPos + (MoveVector * (((sin((OS.get_ticks_msec() * 0.001 * MoveSpeed * Engine.time_scale) + MoveOffset) + 1.0) * 0.5)))
 		set_position(pos)

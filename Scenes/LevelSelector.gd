@@ -15,7 +15,7 @@ func _ready():
 	UITween.start()
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("Dash"):
 		StartLevel = true
 		UITween.interpolate_property(UIColorRect, "rect_position", Vector2(0.0, -48.0), Vector2(0.0, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		UITween.start()

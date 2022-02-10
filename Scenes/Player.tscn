@@ -135,6 +135,10 @@ position = Vector2( 0, 2 )
 enabled = true
 cast_to = Vector2( 2.5, 0 )
 
+[node name="GroundCheck" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 4 )
+
 [node name="WallJumpTween" type="Tween" parent="."]
 
 [node name="PogoArea" type="Area2D" parent="."]
