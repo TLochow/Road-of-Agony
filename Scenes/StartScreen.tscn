@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Graphics/Ark.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Hazards/Sawblade.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Graphics/Player.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/EffortsPro.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scenes/Hazards/WalkingEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Graphics/Spring.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -138,13 +140,13 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 1.0
+margin_left = -9.0
 margin_top = 26.0
-margin_right = 43.0
+margin_right = 33.0
 margin_bottom = 39.0
 custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 custom_fonts/font = SubResource( 4 )
-text = "Press any"
+text = "Press"
 align = 1
 valign = 1
 __meta__ = {
@@ -152,13 +154,13 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 1.0
+margin_left = -18.0
 margin_top = 34.0
-margin_right = 55.0
+margin_right = 46.0
 margin_bottom = 47.0
 custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 custom_fonts/font = SubResource( 4 )
-text = "Key to start."
+text = "Space"
 align = 1
 valign = 1
 __meta__ = {
@@ -178,7 +180,7 @@ position = Vector2( 86, 44 )
 Scale = 5.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 48, 30 )
+position = Vector2( 49, 30 )
 texture = ExtResource( 6 )
 hframes = 4
 
@@ -186,11 +188,19 @@ hframes = 4
 anims/RESET = SubResource( 2 )
 anims/Wave = SubResource( 3 )
 
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 52, 39 )
+texture = ExtResource( 9 )
+hframes = 2
+
 [node name="Spikes" parent="." instance=ExtResource( 4 )]
 tile_data = PoolIntArray( 458766, 7, 0, 458767, 0, 0, 458768, 0, 0, 458769, 4, 0, 524302, 3, 0, 524305, 2, 0, 589838, 3, 0, 589841, 2, 0, 655374, 3, 0, 655377, 2, 0, 720910, 6, 0, 720911, 1, 0, 720912, 1, 0, 720913, 5, 0 )
 
 [node name="TileMap" parent="." instance=ExtResource( 5 )]
-tile_data = PoolIntArray( 524303, 0, 0, 524304, 0, 0, 589839, 0, 0, 589840, 0, 0, 655375, 0, 0, 655376, 0, 0 )
+tile_data = PoolIntArray( 524303, 0, 0, 524304, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589839, 0, 0, 589840, 0, 0, 655368, 0, 0, 655369, 0, 0, 655375, 0, 0, 655376, 0, 0 )
+
+[node name="WalkingEnemy" parent="." instance=ExtResource( 8 )]
+position = Vector2( 34, 33 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

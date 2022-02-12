@@ -9,6 +9,7 @@ enum Direction {
 	Right
 }
 
+export(bool) var Active = true
 export(float) var SpawnCooldown = 4.0
 export(float) var InitialWaitTime = 0.0
 export(Direction) var BeamDirection = Direction.Left
@@ -16,12 +17,13 @@ export(Direction) var BeamDirection = Direction.Left
 onready var Player = get_tree().get_nodes_in_group("Player")[0]
 
 func _ready():
-	if InitialWaitTime > 0.0:
-		var timer = $StartTimer
-		timer.wait_time = InitialWaitTime
-		timer.start()
-	else:
-		_on_StartTimer_timeout()
+	if Active:
+		if InitialWaitTime > 0.0:
+			var timer = $StartTimer
+			timer.wait_time = InitialWaitTime
+			timer.start()
+		else:
+			_on_StartTimer_timeout()
 
 func _on_StartTimer_timeout():
 	var timer = $Timer
@@ -48,3 +50,12 @@ func _on_Timer_timeout():
 	beam.rotation_degrees = rot
 	add_child(beam)
 
+func Activate():
+	if not Active:
+		Active = true
+		_ready()
+
+func Deactivate():
+	if Active:
+		Active = false
+		$Timer.stop()

@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/PlayerCamera.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Hazards/Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Hazards/Cannon.tscn" type="PackedScene" id=7]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 65536, 0, 0, 65562, 0, 0, 131072, 0, 0, 131098, 0, 0, 196608, 0, 0, 196634, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262167, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 393216, 0, 0, 393217, 0, 0, 393241, 0, 0, 393242, 0, 0, 458752, 0, 0, 458778, 0, 0, 524288, 0, 0, 524314, 0, 0, 589824, 0, 0, 589850, 0, 0, 655360, 0, 0, 655386, 0, 0, 720896, 0, 0, 720922, 0, 0, 786432, 0, 0, 786458, 0, 0, 851968, 0, 0, 851994, 0, 0, 917504, 0, 0, 917530, 0, 0, 983040, 0, 0, 983066, 0, 0, 1048576, 0, 0, 1048602, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0 )
+
+[node name="Spikes" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 458753, 2, 0, 458777, 3, 0, 524289, 2, 0, 524313, 3, 0, 589825, 2, 0, 589849, 3, 0, 655361, 2, 0, 655385, 3, 0, 720897, 2, 0, 720921, 3, 0, 786433, 2, 0, 786457, 3, 0, 851969, 2, 0, 851993, 3, 0, 917505, 2, 0, 917529, 3, 0, 983041, 2, 0, 983065, 3, 0, 1048577, 8, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 11, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 8, 14 )
+DashEnabled = true
+DoubleJumpEnabled = true
+WallJumpEnabled = true
+PogoEnabled = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Goal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 99, 11 )
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="Cannon" parent="Hazards" instance=ExtResource( 7 )]
+position = Vector2( 30, 16 )
+rotation = 1.5708
+SpawnCooldown = 2.0
+
+[node name="Cannon2" parent="Hazards" instance=ExtResource( 7 )]
+position = Vector2( 46, 16 )
+rotation = 1.5708
+SpawnCooldown = 2.0
+InitialWaitTime = 0.5
+
+[node name="Cannon3" parent="Hazards" instance=ExtResource( 7 )]
+position = Vector2( 62, 16 )
+rotation = 1.5708
+SpawnCooldown = 2.0
+InitialWaitTime = 1.0
+
+[node name="Cannon4" parent="Hazards" instance=ExtResource( 7 )]
+position = Vector2( 78, 16 )
+rotation = 1.5708
+SpawnCooldown = 2.0
+InitialWaitTime = 1.5
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Tween" type="Tween" parent="UI"]
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+visible = false
+margin_right = 84.0
+margin_bottom = 48.0
+color = Color( 0.262745, 0.321569, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
