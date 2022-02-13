@@ -114,6 +114,7 @@ func _physics_process(delta):
 				CanPogo = false
 				PogoArea.visible = true
 				PogoArea.collision_mask = 2
+				PogoArea.collision_layer = 8
 				PogoTimer.start()
 			if Input.is_action_just_pressed("Dash") and DashEnabled and HasDash and CanDash:
 				HasDash = false
@@ -195,4 +196,5 @@ func _on_PogoArea_body_entered(_body):
 func _on_PogoTimer_timeout():
 	CanPogo = true
 	PogoArea.collision_mask = 0
+	PogoArea.collision_layer = 0
 	PogoArea.visible = false

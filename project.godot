@@ -150,6 +150,7 @@ Assist_Speed={
 2d_physics/layer_1="Level"
 2d_physics/layer_2="Damage"
 2d_physics/layer_3="Player"
+2d_physics/layer_4="Pogo"
 
 [physics]
 
