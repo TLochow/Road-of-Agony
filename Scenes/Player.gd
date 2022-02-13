@@ -160,7 +160,7 @@ func SwitchAnimation(animationPlayer, animation):
 		animationPlayer.play(animation)
 
 func Die():
-	if Alive:
+	if Alive and not AssistMode.Invincible:
 		Alive = false
 		visible = false
 		collision_layer = 0
@@ -181,8 +181,7 @@ func RefreshJumps():
 	UsedDoubleJump = false
 
 func _on_DamageDetector_body_entered(_body):
-	if not AssistMode.Invincible:
-		Die()
+	Die()
 
 func _on_DashTween_tween_all_completed():
 	CanDash = true

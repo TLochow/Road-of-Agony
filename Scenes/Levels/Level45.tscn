@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/PlayerCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,15 +7,21 @@
 [ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Hazards/TempPogoPoint.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Hazards/Fire.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Graphics/Ark.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Scenes/Hazards/Sawblade.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 9 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 65536, 0, 0, 65577, 0, 0, 131072, 0, 0, 131113, 0, 0, 196608, 0, 0, 196649, 0, 0, 262144, 0, 0, 262185, 0, 0, 327680, 0, 0, 327721, 0, 0, 393216, 0, 0, 393257, 0, 0, 458752, 0, 0, 458793, 0, 0, 524288, 0, 0, 524329, 0, 0, 589824, 0, 0, 589865, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655399, 0, 0, 655400, 0, 0, 655401, 0, 0, 720896, 0, 0, 720897, 0, 0, 720936, 0, 0, 720937, 0, 0, 786432, 0, 0, 786473, 0, 0, 851968, 0, 0, 852009, 0, 0, 917504, 0, 0, 917545, 0, 0, 983040, 0, 0, 983081, 0, 0, 1048576, 0, 0, 1048617, 0, 0, 1114112, 0, 0, 1114153, 0, 0, 1179648, 0, 0, 1179689, 0, 0, 1245184, 0, 0, 1245225, 0, 0, 1310720, 0, 0, 1310761, 0, 0, 1376256, 0, 0, 1376297, 0, 0, 1441792, 0, 0, 1441833, 0, 0, 1507328, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507333, 0, 0, 1507334, 0, 0, 1507335, 0, 0, 1507336, 0, 0, 1507337, 0, 0, 1507338, 0, 0, 1507339, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507342, 0, 0, 1507343, 0, 0, 1507344, 0, 0, 1507345, 0, 0, 1507346, 0, 0, 1507347, 0, 0, 1507348, 0, 0, 1507349, 0, 0, 1507350, 0, 0, 1507351, 0, 0, 1507352, 0, 0, 1507353, 0, 0, 1507354, 0, 0, 1507355, 0, 0, 1507356, 0, 0, 1507357, 0, 0, 1507358, 0, 0, 1507359, 0, 0, 1507360, 0, 0, 1507361, 0, 0, 1507362, 0, 0, 1507363, 0, 0, 1507364, 0, 0, 1507365, 0, 0, 1507366, 0, 0, 1507367, 0, 0, 1507368, 0, 0, 1507369, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 42, 0, 0, 43, 0, 0, 44, 0, 0, 45, 0, 0, 46, 0, 0, 47, 0, 0, 48, 0, 0, 49, 0, 0, 50, 0, 0, 51, 0, 0, 52, 0, 0, 53, 0, 0, 54, 0, 0, 55, 0, 0, 56, 0, 0, 57, 0, 0, 58, 0, 0, 59, 0, 0, 60, 0, 0, 61, 0, 0, 62, 0, 0, 63, 0, 0, 64, 0, 0, 65, 0, 0, 66, 0, 0, 67, 0, 0, 68, 0, 0, 69, 0, 0, 70, 0, 0, 71, 0, 0, 72, 0, 0, 73, 0, 0, 74, 0, 0, 75, 0, 0, 76, 0, 0, 77, 0, 0, 78, 0, 0, 79, 0, 0, 65536, 0, 0, 65615, 0, 0, 131072, 0, 0, 131151, 0, 0, 196608, 0, 0, 196687, 0, 0, 262144, 0, 0, 262223, 0, 0, 327680, 0, 0, 327759, 0, 0, 393216, 0, 0, 393295, 0, 0, 458752, 0, 0, 458831, 0, 0, 524288, 0, 0, 524367, 0, 0, 589824, 0, 0, 589903, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655399, 0, 0, 655400, 0, 0, 655437, 0, 0, 655438, 0, 0, 655439, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720929, 0, 0, 720930, 0, 0, 720931, 0, 0, 720932, 0, 0, 720933, 0, 0, 720934, 0, 0, 720935, 0, 0, 720936, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 720940, 0, 0, 720941, 0, 0, 720942, 0, 0, 720943, 0, 0, 720944, 0, 0, 720945, 0, 0, 720946, 0, 0, 720947, 0, 0, 720948, 0, 0, 720949, 0, 0, 720950, 0, 0, 720951, 0, 0, 720952, 0, 0, 720953, 0, 0, 720954, 0, 0, 720955, 0, 0, 720956, 0, 0, 720957, 0, 0, 720958, 0, 0, 720959, 0, 0, 720960, 0, 0, 720961, 0, 0, 720962, 0, 0, 720963, 0, 0, 720964, 0, 0, 720965, 0, 0, 720966, 0, 0, 720967, 0, 0, 720968, 0, 0, 720969, 0, 0, 720970, 0, 0, 720971, 0, 0, 720972, 0, 0, 720973, 0, 0, 720974, 0, 0, 720975, 0, 0 )
 
 [node name="Spikes" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( 786433, 2, 0, 786472, 3, 0, 851969, 2, 0, 852008, 3, 0, 917505, 2, 0, 917544, 3, 0, 983041, 2, 0, 983080, 3, 0, 1048577, 2, 0, 1048616, 3, 0, 1114113, 2, 0, 1114152, 3, 0, 1179649, 2, 0, 1179688, 3, 0, 1245185, 2, 0, 1245224, 3, 0, 1310721, 2, 0, 1310760, 3, 0, 1376257, 2, 0, 1376296, 3, 0, 1441793, 8, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441810, 0, 0, 1441811, 0, 0, 1441812, 0, 0, 1441813, 0, 0, 1441814, 0, 0, 1441815, 0, 0, 1441816, 0, 0, 1441817, 0, 0, 1441818, 0, 0, 1441819, 0, 0, 1441820, 0, 0, 1441821, 0, 0, 1441822, 0, 0, 1441823, 0, 0, 1441824, 0, 0, 1441825, 0, 0, 1441826, 0, 0, 1441827, 0, 0, 1441828, 0, 0, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1441832, 11, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 8, 38 )
@@ -32,21 +38,281 @@ __meta__ = {
 }
 
 [node name="Goal" parent="." instance=ExtResource( 5 )]
-position = Vector2( 160, 35 )
+position = Vector2( 312, 35 )
 
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="TempPogoPoint" parent="Hazards" instance=ExtResource( 7 )]
-position = Vector2( 35, 40 )
+position = Vector2( 194, 29 )
 
 [node name="TempPogoPoint2" parent="Hazards" instance=ExtResource( 7 )]
-position = Vector2( 71, 37 )
+position = Vector2( 230, 26 )
 
 [node name="TempPogoPoint3" parent="Hazards" instance=ExtResource( 7 )]
-position = Vector2( 101, 48 )
+position = Vector2( 260, 37 )
 
 [node name="TempPogoPoint4" parent="Hazards" instance=ExtResource( 7 )]
-position = Vector2( 128, 39 )
+position = Vector2( 287, 28 )
+
+[node name="Sawblade" parent="Hazards" instance=ExtResource( 10 )]
+position = Vector2( 44, 29 )
+Scale = 1.5
+
+[node name="Sawblade2" parent="Hazards" instance=ExtResource( 10 )]
+position = Vector2( 80, 26 )
+Scale = 1.5
+
+[node name="Sawblade3" parent="Hazards" instance=ExtResource( 10 )]
+position = Vector2( 110, 37 )
+Scale = 1.5
+
+[node name="Sawblade4" parent="Hazards" instance=ExtResource( 10 )]
+position = Vector2( 137, 28 )
+Scale = 1.5
+
+[node name="Fire" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 14, 43 )
+
+[node name="Fire2" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 18, 43 )
+
+[node name="Fire3" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 22, 43 )
+
+[node name="Fire4" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 26, 43 )
+
+[node name="Fire5" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 30, 43 )
+
+[node name="Fire6" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 34, 43 )
+
+[node name="Fire7" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 38, 43 )
+
+[node name="Fire8" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 42, 43 )
+
+[node name="Fire9" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 46, 43 )
+
+[node name="Fire10" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 50, 43 )
+
+[node name="Fire11" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 54, 43 )
+
+[node name="Fire12" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 58, 43 )
+
+[node name="Fire13" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 62, 43 )
+
+[node name="Fire14" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 66, 43 )
+
+[node name="Fire15" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 70, 43 )
+
+[node name="Fire16" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 74, 43 )
+
+[node name="Fire25" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 110, 43 )
+
+[node name="Fire26" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 114, 43 )
+
+[node name="Fire27" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 118, 43 )
+
+[node name="Fire28" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 122, 43 )
+
+[node name="Fire29" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 126, 43 )
+
+[node name="Fire30" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 130, 43 )
+
+[node name="Fire31" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 134, 43 )
+
+[node name="Fire32" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 138, 43 )
+
+[node name="Fire33" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 142, 43 )
+
+[node name="Fire34" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 146, 43 )
+
+[node name="Fire35" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 150, 43 )
+
+[node name="Fire36" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 154, 43 )
+
+[node name="Fire17" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 78, 43 )
+
+[node name="Fire18" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 82, 43 )
+
+[node name="Fire19" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 86, 43 )
+
+[node name="Fire20" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 90, 43 )
+
+[node name="Fire21" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 94, 43 )
+
+[node name="Fire22" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 98, 43 )
+
+[node name="Fire23" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 102, 43 )
+
+[node name="Fire24" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 106, 43 )
+
+[node name="Fire37" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 166, 43 )
+
+[node name="Fire38" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 170, 43 )
+
+[node name="Fire39" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 174, 43 )
+
+[node name="Fire40" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 178, 43 )
+
+[node name="Fire41" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 182, 43 )
+
+[node name="Fire42" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 186, 43 )
+
+[node name="Fire43" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 190, 43 )
+
+[node name="Fire44" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 194, 43 )
+
+[node name="Fire45" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 198, 43 )
+
+[node name="Fire46" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 202, 43 )
+
+[node name="Fire47" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 206, 43 )
+
+[node name="Fire48" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 210, 43 )
+
+[node name="Fire49" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 214, 43 )
+
+[node name="Fire50" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 218, 43 )
+
+[node name="Fire51" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 222, 43 )
+
+[node name="Fire52" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 226, 43 )
+
+[node name="Fire53" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 262, 43 )
+
+[node name="Fire54" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 266, 43 )
+
+[node name="Fire55" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 270, 43 )
+
+[node name="Fire56" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 274, 43 )
+
+[node name="Fire57" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 278, 43 )
+
+[node name="Fire58" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 282, 43 )
+
+[node name="Fire59" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 286, 43 )
+
+[node name="Fire60" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 290, 43 )
+
+[node name="Fire61" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 294, 43 )
+
+[node name="Fire62" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 298, 43 )
+
+[node name="Fire63" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 302, 43 )
+
+[node name="Fire64" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 306, 43 )
+
+[node name="Fire65" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 230, 43 )
+
+[node name="Fire66" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 234, 43 )
+
+[node name="Fire67" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 238, 43 )
+
+[node name="Fire68" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 242, 43 )
+
+[node name="Fire69" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 246, 43 )
+
+[node name="Fire70" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 250, 43 )
+
+[node name="Fire71" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 254, 43 )
+
+[node name="Fire72" parent="Hazards" instance=ExtResource( 8 )]
+position = Vector2( 258, 43 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 7.0
+margin_right = 71.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "You can't
+bounce off
+ground fire"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 141.0
+margin_top = 9.0
+margin_right = 207.0
+margin_bottom = 39.0
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "But you can
+bounce off
+fire balls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 100
