@@ -5,7 +5,7 @@ onready var UITween = $ColorRect/Tween
 onready var UIColorRect = $ColorRect
 
 var SelectedLevel = 1
-var MaxLevel = 100
+var MaxLevel = 53
 var StartLevel = false
 
 func _ready():
