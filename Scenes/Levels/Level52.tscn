@@ -21,6 +21,7 @@ WallJumpEnabled = true
 PogoEnabled = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
